@@ -13,9 +13,9 @@
 
 #********************************************************
 #*Conjunto de herramientas estadísticas para el análisis*
-#*univariado, variables cuantitativas por medio de OOP  *
+#*univariado, variables cuantitativas                   *
 #*Desarrollado por Brayan Rodríguez                     *
-#*Versión 1.1                                           *
+#*Versión 1.2                                           *
 #********************************************************
 
 #Para importar la librería matemáticas

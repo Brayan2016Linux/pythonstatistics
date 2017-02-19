@@ -8,7 +8,7 @@
 #* This file is part of Python Statistics.
 #* 
 #* Python Statistics can not be copied and/or distributed without the express
-#* permission of Brayan Rodriguez and Imagine Cube Lab
+#* permission of Brayan Rodriguez
 #*******************************************************/
 
 #********************************************************

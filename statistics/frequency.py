@@ -1,29 +1,19 @@
 # -*- coding: utf-8 -*-
 #!python
 #frecuency.py
-<<<<<<< HEAD
 #Created: 07/21/2017
 #Last Updated: 07/21/2017
-=======
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
 
 #/*******************************************************
 #* Copyright (C) 2016-2017 Brayan Rodriguez D. <bradrd2009jp@gmail.com>
-#* 
 #* This file is part of Python Statistics.
-#* 
 #* Python Statistics can not be copied and/or distributed without the express
 #* permission of Brayan Rodriguez
 #*******************************************************/
 
-
 #********************************************************
 #*Conjunto de herramientas estadísticas para el análisis*
-<<<<<<< HEAD
 #*univariado, variables cuantitativas por medio de OOP  *
-=======
-#*univariado, variables cuantitativas                   *
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
 #*Desarrollado por Brayan Rodríguez                     *
 #*Versión 1.2                                           *
 #********************************************************
@@ -31,7 +21,6 @@
 #Importa la libreria utilizando el nombre:
 #if __name__ == '__main__':
 
-<<<<<<< HEAD
 #Para importar librerías en carpetas aledañas a nivel superior del .py
 #import sys
 #sys.path.append("./<directorio>")
@@ -54,17 +43,10 @@ sys.path.append("./")
 from matrix import matrix as mat
 from statistics import descriptive_stat as ds
 
-=======
-#Para importar la librería
-import statistics
-import math
-
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
 #Default precision:
 precision = 2
 
 #configuración de la precisión
-<<<<<<< HEAD
 def set_precision(myprecision):
     """Set the number of decimals in output
     
@@ -98,7 +80,6 @@ def asurance_limit_value():
     mypower = 5 * math.pow(10, - (get_precision() + 1))
     return mypower
 
-
 #Devuelve la amplitud de las clases
 def class_range(my_list, classNumber):
     """Calculate the class range value of a list
@@ -110,46 +91,11 @@ def class_range(my_list, classNumber):
     """
     myNumber = ds.data_range(my_list) / float(classNumber)
     setPrecision = "{0:0." + str(get_precision() - 1) + "f}"
-=======
-def setPrecision(myprecision):
-    precision = myprecision
-
-#Devuelve el valor de la precisión
-def getPrecision():
-    return precision
-
-#Devuelve el valor del límite de seguridad
-def asuranceLimitValue():
-    mypower = 5 * math.pow(10, - (getPrecision() + 1))
-    return mypower
-
-#Devuelve el tamaño total de la lista
-def totalNumberOfValues(myList):
-    return len(myList)
-
-#Devuelve valor mínimo
-def XminValue(myList):
-    return myList[0]
-
-#Devuelve el valor máximo
-def XmaxValue(myList):
-    return myList[len(myList) - 1]
-
-#Devuelve la amplitud o recorrido de los datos
-def dataRange(myList):
-    return XmaxValue(myList) - XminValue(myList)
-
-#Devuelve la amplitud de las clases
-def classRange(myList, classNumber):
-    myNumber = dataRange(myList) / float(classNumber)
-    setPrecision = "{0:0." + str(getPrecision() - 1) + "f}"
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     myString = ""
     myString = setPrecision.format(myNumber) + "5"
     return float(myString)
 
 #Devuelve el límite inferior de una clase
-<<<<<<< HEAD
 def inferior_limit_class_value(my_list, classNumber):
     """Calculate the inferior limit value of a class
     
@@ -163,13 +109,6 @@ def inferior_limit_class_value(my_list, classNumber):
     classRangeValue = class_range(my_list, classNumber)
     addValue = firstValue - asurance_limit_value()
     setPrecision = "{0:0." + str(get_precision()) + "f}"
-=======
-def inferiorLimitClass(myList, classNumber):
-    firstValue = XminValue(myList)
-    classRangeValue = classRange(myList, classNumber)
-    addValue = firstValue - asuranceLimitValue()
-    setPrecision = "{0:0." + str(getPrecision()) + "f}"
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     myLimitsList = []
     for i in range(classNumber):
         myLimitsList.append(float(setPrecision.format(addValue)))
@@ -177,7 +116,6 @@ def inferiorLimitClass(myList, classNumber):
     return myLimitsList
 
 #Devuelve el límite superior de una clase
-<<<<<<< HEAD
 def superior_limit_class_value(my_list, classNumber):
     """Calculate the superior limit value of a class
     
@@ -191,13 +129,6 @@ def superior_limit_class_value(my_list, classNumber):
     classRangeValue = class_range(my_list, classNumber)
     addValue = firstValue + classRangeValue - asurance_limit_value()
     setPrecision = "{0:0." + str(get_precision()) + "f}"
-=======
-def superiorLimitClass(myList, classNumber):
-    firstValue = XminValue(myList)
-    classRangeValue = classRange(myList, classNumber)
-    addValue = firstValue + classRangeValue - asuranceLimitValue()
-    setPrecision = "{0:0." + str(getPrecision()) + "f}"
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     myLimitsList = []
     for i in range(classNumber):
         myLimitsList.append(float(setPrecision.format(addValue)))
@@ -205,7 +136,6 @@ def superiorLimitClass(myList, classNumber):
     return myLimitsList
 
 #Devuelve la frequencia de la clase
-<<<<<<< HEAD
 def quantitative_frequency(my_list, classNumber):
     """Return a vector with quantitative frequency of each class
     
@@ -217,11 +147,6 @@ def quantitative_frequency(my_list, classNumber):
     """
     linfC = inferior_limit_class_value(my_list, classNumber)
     lsupC = superior_limit_class_value(my_list, classNumber)
-=======
-def quantitativeFrequency(myList, classNumber):
-    linfC = inferiorLimitClass(myList, classNumber)
-    lsupC = superiorLimitClass(myList, classNumber)
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     #Lista a devolver
     frequency = []
     #Primer ciclo
@@ -230,22 +155,15 @@ def quantitativeFrequency(myList, classNumber):
         supLimit = lsupC[i]
         count = 0
         #Segundo ciclo
-<<<<<<< HEAD
         for j in range(len(my_list)):
             if my_list[j] >= infLimit:
                 if my_list[j] < supLimit:
-=======
-        for j in range(len(myList)):
-            if myList[j] >= infLimit:
-                if myList[j] < supLimit:
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
                     count = count + 1
         frequency.append(count)
     #Return
     return frequency
 
 #Devuelve la clasificación de las variables cualitativas
-<<<<<<< HEAD
 def qualitative_classes(my_list):
     """Return a vector with quantitative class labels
     
@@ -261,16 +179,6 @@ def qualitative_classes(my_list):
         addValue = my_list[i]
         for j in range(len(classList)):
             if classList[j] == my_list[i]:
-=======
-def qualitativeClass(myList):
-    classList = []
-    addValue = ""
-    comprobator = True
-    for i in range(len(myList)):
-        addValue = myList[i]
-        for j in range(len(classList)):
-            if classList[j] == myList[i]:
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
                 comprobator = False
                 break
             else:
@@ -280,7 +188,6 @@ def qualitativeClass(myList):
     return classList
 
 #Devuelve la frecuencia de las variables
-<<<<<<< HEAD
 def qualitative_frequency(my_list):
     """Return a vector with quanlitative frequency of each class
     
@@ -311,22 +218,6 @@ def contingency_frequency_matrix(firstVariable, secondVariable):
     #Clasificación
     RowClass = qualitative_classes(firstVariable)
     ColumnClass = qualitative_classes(secondVariable)
-=======
-def qualitativeFrequency(myList):
-    classList = qualitativeClass(myList)
-    freqList = []
-    for i in range(len(classList)):
-        freqList.append(myList.count(classList[i]))
-    return freqList
-
-#Devuelve la matriz de contingencias
-def contingencyMatrixFrequency(firstVariable, secondVariable):
-    #Total de observaciones
-    N = len(firstVariable)
-    #Clasificación
-    RowClass = qualitativeClass(firstVariable)
-    ColumnClass = qualitativeClass(secondVariable)
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     numberRows = len(RowClass)
     numberCols = len(ColumnClass)
     #Matriz de contingencia
@@ -345,7 +236,6 @@ def contingencyMatrixFrequency(firstVariable, secondVariable):
     return contingencyMatrix
 
 #Devuelve el número de filas de la tabla de contingencia
-<<<<<<< HEAD
 def number_of_rows(cMatrix):
     """Return the number of rows of a given matrix
     
@@ -379,20 +269,6 @@ def sum_of_cols_contingency_matrix(cMatrix):
     sumOfColsCM = []
     rows_N = number_of_rows(cMatrix)
     columns_N = number_of_columns(cMatrix)
-=======
-def numberOfRows(cMatrix):
-    return len(cMatrix)
-
-#Devuelve el número de columnas de la tabla de contingencia
-def numberOfColumns(cMatrix):
-    return len(cMatrix[0])
-
-#Devuelve la lista de la suma de las filas
-def sumOfColsContingencyMatrix(cMatrix):
-    sumOfColsCM = []
-    rows_N = numberOfRows(cMatrix)
-    columns_N = numberOfColumns(cMatrix)
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     for j in range(columns_N):
         suma = 0
         for i in range(rows_N):
@@ -401,7 +277,6 @@ def sumOfColsContingencyMatrix(cMatrix):
     return sumOfColsCM
 
 #Devuelve la lista de la suma de las columnas
-<<<<<<< HEAD
 def sum_of_rows_contingency_matrix(cMatrix):
     """Return the list with the sum of each rows of a given matrix
     
@@ -412,11 +287,6 @@ def sum_of_rows_contingency_matrix(cMatrix):
     """
     rows_N = number_of_rows(cMatrix)
     columns_N = number_of_columns(cMatrix)
-=======
-def sumOfRowsContingencyMatrix(cMatrix):
-    rows_N = numberOfRows(cMatrix)
-    columns_N = numberOfColumns(cMatrix)
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     sumOfRowsCM = []
     for i in range(rows_N):
         suma = 0
@@ -436,17 +306,12 @@ def value_N_of_contingency_matrix(contMatrix):
     return sum of each value of contingency matrix
     """
     sumOfColumnsCM = sum_of_cols_contingency_matrix(contMatrix)
-=======
-def valueNOfContingencyMatrix(contMatrix):
-    sumOfColumnsCM = sumOfColsContingencyMatrix(contMatrix)
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     suma = 0
     for i in range(len(sumOfColumnsCM)):
         suma = suma + sumOfColumnsCM[i]
     return suma
 
 #Devuelve la matriz chi cuadrada de dos variables
-<<<<<<< HEAD
 def square_chi_index_cmatrix(firstV, secondV):
     """Return the square chi index between two list of qualitative
     variables
@@ -480,30 +345,11 @@ def square_chi_idx_cmatrix(cMatrix):
     for i in range(Rows):
         for j in range(Columns):
             squareCij = ds.square_number(cMatrix[i][j])
-=======
-def squareChiIndexCMatrix(firstV, secondV):
-    CMatrix = contingencyMatrixFrequency(firstV, secondV)
-    return squareChiICMatrix(CMatrix)
-
-#Devuelve la matriz chi cuadrada de una tabla de contingencia
-def squareChiICMatrix(cMatrix):
-    Rows = numberOfRows(cMatrix)
-    Columns = numberOfColumns(cMatrix)
-    SquareCMatrix = []
-    for k in range(Rows):
-        SquareCMatrix.append([])
-    SCj = sumOfColsContingencyMatrix(cMatrix)
-    SFi = sumOfRowsContingencyMatrix(cMatrix)
-    for i in range(Rows):
-        for j in range(Columns):
-            squareCij = statistics.squareNumber(cMatrix[i][j])
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
             Iij = float(squareCij) / (SCj[j] * SFi[i])
             SquareCMatrix[i].append(Iij)
     return SquareCMatrix
 
 #Devuelve el valor Chi cuadrado de dos variables
-<<<<<<< HEAD
 def square_chi_index_contingency_v(firstV, secondV):
     """Return the square chi index of two list of qualitative variable
     
@@ -530,26 +376,12 @@ def square_chi_index_contingency(cMatrix):
     squareChiIndexCM = square_chi_idx_cmatrix(cMatrix)
     rows = number_of_rows(cMatrix)
     columns = number_of_columns(cMatrix)
-=======
-def squareChiIndexContingencyV(firstV, secondV):
-    CMatrix = contingencyMatrixFrequency(firstV, secondV)
-    return squareChiIndexContingency(CMatrix)
-
-#Devuelve el índice chi-cuadrado de una tabla de contingencia
-def squareChiIndexContingency(cMatrix):
-    sumOfIndexes = 0.0
-    N_Value = valueNOfContingencyMatrix(cMatrix)
-    squareChiIndexCM = squareChiICMatrix(cMatrix)
-    rows = numberOfRows(cMatrix)
-    columns = numberOfColumns(cMatrix)
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     for i in range(rows):
         for j in range(columns):
             sumOfIndexes = sumOfIndexes + squareChiIndexCM[i][j]
     return sumOfIndexes * N_Value - N_Value
 
 #Devuelve el coeficiente de Pearson de dos conjuntos de variables
-<<<<<<< HEAD
 def pearson_coefficient_of_contingency_matrix(firstV, secondV):
     """Return the pearson coefficient for two sets of quatitative
     variables
@@ -657,50 +489,6 @@ def independence_correlation_index(quantitativeV, qualitativeV):
     weightedMeans = []
     weightList = []
     categoriesList = qualitative_classes(qualitativeV)
-=======
-def pearsonCoefficientContingency(firstV, secondV):
-    CMatrix = contingencyMatrixFrequency(firstV, secondV)
-    return pearsonCoefficientOfCMatrix(CMatrix)
-
-#Devuelve el coeficiente de Pearson con la matriz de contingencia
-def pearsonCoefficientOfCMatrix(cMatrix):
-    CMatrix = cMatrix
-    squareChiIndex = squareChiIndexContingency(CMatrix)
-    N_Value = valueNOfContingencyMatrix(CMatrix)
-    return float(squareChiIndex) / N_Value
-
-#Devuelve el coeficiente de Pearson con N
-def pearsonCoefficientContValueN(squareChiIndex, N_Value):
-    return float(squareChiIndex) / N_Value
-
-#Devuelve el coeficiente de Chuprov de dos conjuntos de variables
-def chuprovCoefficientContingency(firstV, secondV):
-    pearsonValue = pearsonCoefficientContingency(firstV, secondV)
-    rows_M = len(qualitativeClass(firstV))
-    columns_K = len(qualitativeClass(secondV))
-    return pearsonValue / ((rows_M - 1) * (columns_K - 1))
-
-#Devuelve el coeficiente de Chuprov de una tabla de contingencia
-def chuprovCoefficientCMatrix(cMatrix):
-    CMatrix = cMatrix
-    pearsonValue = pearsonCoefficientOfCMatrix(CMatrix)
-    rows_M = numberOfRows(CMatrix)
-    columns_K = numberOfColumns(CMatrix)
-    return pearsonValue / ((rows_M - 1) * (columns_K - 1))
-
-#Devuelve el coeficiente de Chuprov con M,K grados de libertad
-def chuprovCoefficientMK(pearsonValue, rows_M, columns_K):
-    return pearsonValue / ((rows_M - 1) * (columns_K - 1))
-
-#Devuelve el coeficiente de independencia
-def independenceCorrelationIndex(quantitativeV, qualitativeV):
-    N = len(quantitativeV)
-    varianceX = statistics.varianceValueSigma(quantitativeV)
-    #Arreglos auxiliares
-    weightedMeans = []
-    weightList = []
-    categoriesList = qualitativeClass(qualitativeV)
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     #Cálculo de suma de valores y pesos
     for i in range(len(categoriesList)):
         count = 0
@@ -712,11 +500,7 @@ def independenceCorrelationIndex(quantitativeV, qualitativeV):
         pi = float(count) / N
         weightList.append(pi)
         weightedMeans.append(float(sumValues) / count)
-<<<<<<< HEAD
     varianceM = ds.weighted_variance(weightedMeans, weightList)
-=======
-    varianceM = statistics.weightedVariance(weightedMeans, weightList)
->>>>>>> 495a74b7688f9f800789dd3256c1c09b3133fc97
     return varianceM / varianceX
 
 #llamada interna

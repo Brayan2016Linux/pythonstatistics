@@ -6,9 +6,7 @@
 
 #/*******************************************************
 #* Copyright (C) 2016-2017 Brayan Rodriguez D. <bradrd2009jp@gmail.com>
-#* 
 #* This file is part of Python Statistics.
-#* 
 #* Python Statistics can not be copied and/or distributed without the express
 #* permission of Brayan Rodriguez
 #*******************************************************/
@@ -16,7 +14,6 @@
 #********************************************************
 #*Conjunto de herramientas estadísticas para el análisis*
 #*univariado, variables cuantitativas por medio de OOP  *
-#*univariado, variables cuantitativas                   *
 #*Desarrollado por Brayan Rodríguez                     *
 #*Versión 1.2                                           *
 #********************************************************

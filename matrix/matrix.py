@@ -293,6 +293,22 @@ def column_vector(matrix, position):
     for i in range(rows):
         columnvect.append(matrix[i][position - 1])
     return columnvect
+    
+#obtiene la distancia entre dos filas
+def get_distance_between_rows(matrix, metricDiag, pos_i, pos_j):
+    """Calculate distance between rows under a metric matrix diagonal
+
+    Atributes
+        matrix
+        metricDiag
+        pos_i: first row
+        pos_j: second row
+        
+    return distance under a metric
+    """
+    i_rowvect = row_vector(matrix, pos_i)
+    j_rowvect = row_vector(matrix, pos_j)
+    return vect.distance_with_metric(i_rowvect, j_rowvect, metricDiag)
 
 #Para llamado de función externa    
 if __name__ == '__main__':

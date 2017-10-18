@@ -235,6 +235,17 @@ print("Vector Diagonal: ", mat.diagonal_vector_of_matrix(mat.diagonal(Vector)))
 print("Identity size 3", mat.identity(3))
 print("RowVector: ", mat.row_vector(MatrixC, 1))
 
+VectorM = [3,4,2,1]
+VectorK = [4,5,6,7]
+VectorW = [0.2, 0.3, 0.1, 0.4]
+print("K: ", VectorM)
+print("K: ", VectorK)
+print("Addition M+K: ", vect.addition_vect(VectorM, VectorK))
+print("Substraction M-K: ", vect.substraction_vect(VectorM, VectorK))
+print("Distance(M,K)W: ", vect.distance_with_metric(VectorM, VectorK, VectorW))
+
+matrixM = [[3,4,2,1],[4,5,6,7]]
+print("Distance(M,K)W: ", mat.get_distance_between_rows(matrixM, VectorW, 0, 1))
 
 TableAX = [[1,2,3,4],[4,5,6,7],[7,2,3,2],[3,2,1,4]]
 TableAXCentred = pca.centralized_matrix(TableAX)
@@ -245,25 +256,25 @@ print("diagonalRS: ", pca.diagonal_reciprocal_sigma(varianceMat))
 print("Correlation matrix ", pca.correlation_r_matrix(varianceMat))
 
 rate = 0.05/365
-print("Intereses", fin.interest_value(2000, rate, 50))
+print("Intereses", fin.interest_value(2000, 50, rate))
 print("VF", fin.future_value(2000, rate, 50))
-print("PV", fin.present_value(fin.future_value(2000, rate, 50), rate, 50))
+print("PV", fin.present_value(fin.future_value(2000, 50, rate), 50, rate))
 print("SimpleRate", fin.interest_rate(2000, 2013.70, 50)*365)
 
 rate2 = 0.06/12
-print("VF", fin.present_value(2500, rate2, 9))
+print("VF", fin.present_value(2500, 9, rate2))
 
 rate3 = 0.08/12
-print("DC", fin.discount_value(3080, rate3, 5))
+print("DC", fin.discount_value(3080, 5, rate3))
 
 rate4 = 0.06/12
-print("Descuento racional", fin.rational_discount_value(1200, rate4, 1))
+print("Descuento racional", fin.rational_discount_value(1200, 1, rate4))
 
 rateA = 0.05/360
-discountA = fin.rational_discount_value(5000, rateA, 60)
+discountA = fin.rational_discount_value(5000, 60, rateA)
 print("Decuento RacionalA ", discountA)
 rateB = 0.04/365
-discountB = fin.rational_discount_value(5000, rateB, 60)
+discountB = fin.rational_discount_value(5000, 60, rateB)
 print("Decuento RacionalB ", discountB)
 print("Ganancia ", discountA - discountB)
 

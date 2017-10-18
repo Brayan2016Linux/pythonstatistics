@@ -38,12 +38,12 @@
 
 #Para importar la librería
 import math
-import descriptive_stat as stat
 
 import sys
 sys.path.append("./")
 from vector import vector as vect
 from matrix import matrix as mat
+from statistics import descriptive_stat as stat
 
 
 #Calcula la métrica D de pesos weight para un tamaño size

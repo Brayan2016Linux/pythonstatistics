@@ -75,7 +75,7 @@ def point_product(vectorX, vectorY):
             pointproduct = pointproduct + product
         return pointproduct
         
-#Cálculo del producto cruz de dos vectores
+#Cálculo del producto cruz de dos vectores de dimensión 3
 def cross_product(vectorX, vectorY):
     """Calculate cross product between two vectors"
     
@@ -159,6 +159,76 @@ def reciprocal(vector):
         reciprocalvector.append(reciprocal)
     return reciprocalvector
         
+#Calcula el vector luego de multiplicar por un escalar:
+#Para cada a[i] * c devuelve c*a[i]
+def scalar_vect(scalar, vector):
+    """Calculate new vector given a vector and scalar"
+    
+    Atributes
+        scalar
+        vector
+        
+    return scalar_vect
+    """
+    scalarvector = []
+    for i in range(len(vector)):
+        result = scalar * float(vector[i])
+        scalarvector.append(result)
+    return scalarvector
+    
+#Calcula la suma de dos vectores:
+#Para cada a[i] , b[i] devuelve a[i] + b[i]
+def addition_vect(vectorA, vectorB):
+    """Calculate new vector given a vector and scalar"
+    
+    Atributes
+        vectorA
+        vectorB
+        
+    return scalar_vect
+    """
+    additionvector = []
+    for i in range(len(vectorA)):
+        result = float(vectorA[i]) + float(vectorB[i]) 
+        additionvector.append(result)
+    return additionvector
+    
+#Calcula la resta de dos vectores:
+#Para cada a[i] , b[i] devuelve a[i] - b[i]
+def substraction_vect(vectorA, vectorB):
+    """Calculate new vector given a vector and scalar"
+    
+    Atributes
+        vectorA
+        vectorB
+        
+    return scalar_vect
+    """
+    subvector = []
+    for i in range(len(vectorA)):
+        result = float(vectorA[i]) - float(vectorB[i]) 
+        subvector.append(result)
+    return subvector
+    
+#Calcula la distancia entre dos vectores bajo una métrica
+def distance_with_metric(vectorX, vectorY, metric):
+    """Calculate distance between two vectors under a metric"
+    
+    Atributes
+        vectorX
+        vectorY
+        metric
+        
+    return distance_with_metric
+    """
+    #vectores de igual longitud
+    if(len(vectorX) == len(vectorY)):
+        squaremodule = 0
+        for i in range(len(vectorX)):
+            difference = vectorX[i]-vectorY[i]
+            squaredifference = (difference ** 2) * metric[i]
+            squaremodule = squaremodule + squaredifference
+        return math.sqrt(squaremodule)
         
 #La correlación de pearson puede verse como el cos(angle)
 #Para llamado de función externa    
